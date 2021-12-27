@@ -13,6 +13,9 @@
 		2C50C3532774BDCD00DC10CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C50C3512774BDCD00DC10CF /* Main.storyboard */; };
 		2C50C3552774BDCE00DC10CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C50C3542774BDCE00DC10CF /* Assets.xcassets */; };
 		2C50C3582774BDCE00DC10CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C50C3562774BDCE00DC10CF /* LaunchScreen.storyboard */; };
+		2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C80277A2AE700E307F1 /* TestTableViewController.swift */; };
+		2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */; };
+		2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */; };
 		D2712429D87AF30BB8D16D47 /* Pods_SwiftWithRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614D770F73FFF1B7AAF0C6A /* Pods_SwiftWithRxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,9 @@
 		2C50C3542774BDCE00DC10CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C50C3572774BDCE00DC10CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C50C3592774BDCE00DC10CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C802C80277A2AE700E307F1 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		8C4A1DAB97DF5C8CCC8873F7 /* Pods-SwiftWithRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWithRxSwift.release.xcconfig"; path = "Target Support Files/Pods-SwiftWithRxSwift/Pods-SwiftWithRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		F52FA974EB051588B64763EC /* Pods-SwiftWithRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWithRxSwift.debug.xcconfig"; path = "Target Support Files/Pods-SwiftWithRxSwift/Pods-SwiftWithRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +72,9 @@
 				2C50C34B2774BDCD00DC10CF /* AppDelegate.swift */,
 				2C50C34D2774BDCD00DC10CF /* SceneDelegate.swift */,
 				2C50C34F2774BDCD00DC10CF /* ViewController.swift */,
+				2C802C80277A2AE700E307F1 /* TestTableViewController.swift */,
+				2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */,
+				2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */,
 				2C50C3512774BDCD00DC10CF /* Main.storyboard */,
 				2C50C3542774BDCE00DC10CF /* Assets.xcassets */,
 				2C50C3562774BDCE00DC10CF /* LaunchScreen.storyboard */,
@@ -153,6 +162,7 @@
 			files = (
 				2C50C3582774BDCE00DC10CF /* LaunchScreen.storyboard in Resources */,
 				2C50C3552774BDCE00DC10CF /* Assets.xcassets in Resources */,
+				2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */,
 				2C50C3532774BDCD00DC10CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +219,8 @@
 				2C50C3502774BDCD00DC10CF /* ViewController.swift in Sources */,
 				2C50C34C2774BDCD00DC10CF /* AppDelegate.swift in Sources */,
 				2C50C34E2774BDCD00DC10CF /* SceneDelegate.swift in Sources */,
+				2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */,
+				2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
