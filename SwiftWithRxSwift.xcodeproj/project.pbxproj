@@ -16,6 +16,8 @@
 		2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C80277A2AE700E307F1 /* TestTableViewController.swift */; };
 		2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */; };
 		2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */; };
+		2CADC142278C9F1F0035D95E /* RxMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CADC141278C9F1F0035D95E /* RxMain.storyboard */; };
+		2CADC145278CA15F0035D95E /* RxMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADC144278CA15F0035D95E /* RxMainViewController.swift */; };
 		D2712429D87AF30BB8D16D47 /* Pods_SwiftWithRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614D770F73FFF1B7AAF0C6A /* Pods_SwiftWithRxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,9 @@
 		2C802C80277A2AE700E307F1 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		2CADC141278C9F1F0035D95E /* RxMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxMain.storyboard; sourceTree = "<group>"; };
+		2CADC144278CA15F0035D95E /* RxMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMainViewController.swift; sourceTree = "<group>"; };
+		2CADC147278CA2FB0035D95E /* RxSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8C4A1DAB97DF5C8CCC8873F7 /* Pods-SwiftWithRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWithRxSwift.release.xcconfig"; path = "Target Support Files/Pods-SwiftWithRxSwift/Pods-SwiftWithRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		F52FA974EB051588B64763EC /* Pods-SwiftWithRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWithRxSwift.debug.xcconfig"; path = "Target Support Files/Pods-SwiftWithRxSwift/Pods-SwiftWithRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,11 +81,22 @@
 				2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */,
 				2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */,
 				2C50C3512774BDCD00DC10CF /* Main.storyboard */,
+				2CADC143278C9F710035D95E /* RxUdemy */,
 				2C50C3542774BDCE00DC10CF /* Assets.xcassets */,
 				2C50C3562774BDCE00DC10CF /* LaunchScreen.storyboard */,
 				2C50C3592774BDCE00DC10CF /* Info.plist */,
 			);
 			path = SwiftWithRxSwift;
+			sourceTree = "<group>";
+		};
+		2CADC143278C9F710035D95E /* RxUdemy */ = {
+			isa = PBXGroup;
+			children = (
+				2CADC147278CA2FB0035D95E /* RxSwiftPlayground.playground */,
+				2CADC141278C9F1F0035D95E /* RxMain.storyboard */,
+				2CADC144278CA15F0035D95E /* RxMainViewController.swift */,
+			);
+			path = RxUdemy;
 			sourceTree = "<group>";
 		};
 		B88E554AF8F663239B524E57 /* Pods */ = {
@@ -162,6 +178,7 @@
 			files = (
 				2C50C3582774BDCE00DC10CF /* LaunchScreen.storyboard in Resources */,
 				2C50C3552774BDCE00DC10CF /* Assets.xcassets in Resources */,
+				2CADC142278C9F1F0035D95E /* RxMain.storyboard in Resources */,
 				2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */,
 				2C50C3532774BDCD00DC10CF /* Main.storyboard in Resources */,
 			);
@@ -221,6 +238,7 @@
 				2C50C34E2774BDCD00DC10CF /* SceneDelegate.swift in Sources */,
 				2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */,
 				2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */,
+				2CADC145278CA15F0035D95E /* RxMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +393,7 @@
 				INFOPLIST_FILE = SwiftWithRxSwift/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = RxMain;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,7 +422,7 @@
 				INFOPLIST_FILE = SwiftWithRxSwift/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = RxMain;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
