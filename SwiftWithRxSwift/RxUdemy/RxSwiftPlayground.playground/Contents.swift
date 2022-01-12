@@ -176,15 +176,44 @@ let strikes = PublishSubject<String>()
 
 
 // MARK: - skip(until: )
+//let subject = PublishSubject<String>()
+//let trigger = PublishSubject<String>()
+//subject.skip(until: trigger)
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+//
+//subject.onNext("A")
+//subject.onNext("B")
+//trigger.onNext("X") // 트리거가 시작되면 시작
+//subject.onNext("C")
+
+// MARK: - take
+
+//Observable.of(1, 2, 3, 4, 5, 6)
+//    .take(3)
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+
+// MARK: - take(while: )
+
+//Observable.of(1, 2, 3, 4, 5, 6, 7)
+//    .take(while: {
+//        $0 % 2 == 1
+//    }).subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+
 let subject = PublishSubject<String>()
 let trigger = PublishSubject<String>()
-subject.skip(until: trigger)
+
+subject.take(until: trigger)
     .subscribe(onNext: {
         print($0)
     }).disposed(by: disposeBag)
 
-subject.onNext("A")
-subject.onNext("B")
-trigger.onNext("X") // 트리거가 시작되면 시작
-subject.onNext("C")
-
+subject.onNext("1")
+subject.onNext("2")
+trigger.onNext("X")
+trigger.onNext("3")
