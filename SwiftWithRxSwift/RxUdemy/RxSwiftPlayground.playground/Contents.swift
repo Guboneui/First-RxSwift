@@ -139,12 +139,21 @@ let strikes = PublishSubject<String>()
 //strikes.onCompleted()
 
 // MARK: - element(at: Int)
-strikes.element(at: 2)
-    .subscribe(onNext: { _ in
-        print("you are out!")
-    }).disposed(by: disposeBag)
+//strikes.element(at: 2)
+//    .subscribe(onNext: { _ in
+//        print("you are out!")
+//    }).disposed(by: disposeBag)
+//
+//strikes.onNext("x")
+//strikes.onNext("x")
+//strikes.onNext("x")
 
-strikes.onNext("x")
-strikes.onNext("x")
-strikes.onNext("x")
+// MARK: - filter
+
+//Observable.of(1, 2, 3, 4, 5, 6, 7)
+//    .filter { $0 % 2 == 0 }
+//    .subscribe(onNext:{
+//        print($0)
+//    }).disposed(by: disposeBag)
+
 
