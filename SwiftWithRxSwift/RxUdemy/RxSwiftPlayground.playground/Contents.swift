@@ -156,4 +156,35 @@ let strikes = PublishSubject<String>()
 //        print($0)
 //    }).disposed(by: disposeBag)
 
+// MARK: - skip
+
+//Observable.of("A", "B", "C", "D", "E")
+//    .skip(3)
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+
+// MARK: - skip(while: )
+
+//Observable.of(1, 2, 3, 4, 5, 6, 7)
+//    .skip(while: {  // 특정값에 만족하지 않는 값을 지나게 되면 이후에는 모두 출력
+//        $0 % 2 == 1
+//    })
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+
+
+// MARK: - skip(until: )
+let subject = PublishSubject<String>()
+let trigger = PublishSubject<String>()
+subject.skip(until: trigger)
+    .subscribe(onNext: {
+        print($0)
+    }).disposed(by: disposeBag)
+
+subject.onNext("A")
+subject.onNext("B")
+trigger.onNext("X") // 트리거가 시작되면 시작
+subject.onNext("C")
 
