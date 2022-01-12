@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import RxRelay
+import PlaygroundSupport
 
 //let observable1 = Observable.just(1)
 //let observable2 = Observable.of(1, 2, 3)
@@ -108,17 +109,34 @@ let disposeBag = DisposeBag()
 //        print($0)
 //    }
 
-let relay = BehaviorRelay(value: ["Item1"])
+//let relay = BehaviorRelay(value: ["Item1"])
+//
+////relay.accept(relay.value + ["Item 2"])
+//var value = relay.value
+//value.append("Item new")
+//value.append("Item new3")
+//
+//relay.accept(value)
+//
+//relay.asObservable()
+//    .subscribe {
+//        print($0)
+//    }
 
-//relay.accept(relay.value + ["Item 2"])
-var value = relay.value
-value.append("Item new")
-value.append("Item new3")
+let strikes = PublishSubject<String>()
 
-relay.accept(value)
+// MARK: - ignoreElement()
+//strikes
+//    .ignoreElements()
+//    .subscribe {
+//        print($0)
+//    }.disposed(by: disposeBag)
+//
+//strikes.onNext("A")
+//strikes.onNext("B")
+//strikes.onNext("C")
+//
+//strikes.onCompleted()
 
-relay.asObservable()
-    .subscribe {
-        print($0)
-    }
+
 
