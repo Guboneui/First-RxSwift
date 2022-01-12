@@ -138,5 +138,13 @@ let strikes = PublishSubject<String>()
 //
 //strikes.onCompleted()
 
+// MARK: - element(at: Int)
+strikes.element(at: 2)
+    .subscribe(onNext: { _ in
+        print("you are out!")
+    }).disposed(by: disposeBag)
 
+strikes.onNext("x")
+strikes.onNext("x")
+strikes.onNext("x")
 
