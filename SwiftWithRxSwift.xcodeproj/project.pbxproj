@@ -19,6 +19,11 @@
 		2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C80277A2AE700E307F1 /* TestTableViewController.swift */; };
 		2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */; };
 		2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */; };
+		2C84ED8427909D4E003A65C6 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84ED8327909D4E003A65C6 /* NewsTableViewController.swift */; };
+		2C84EDA72790A584003A65C6 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84EDA62790A584003A65C6 /* Article.swift */; };
+		2C84EDAA2790A6AF003A65C6 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84EDA82790A6AF003A65C6 /* NewsTableViewCell.swift */; };
+		2C84EDAB2790A6AF003A65C6 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C84EDA92790A6AF003A65C6 /* NewsTableViewCell.xib */; };
+		2C84EDAE2790ABDB003A65C6 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84EDAD2790ABDB003A65C6 /* URLRequest+Extensions.swift */; };
 		2CADC142278C9F1F0035D95E /* RxMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CADC141278C9F1F0035D95E /* RxMain.storyboard */; };
 		2CADC149278CB4E90035D95E /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADC148278CB4E90035D95E /* PhotosCollectionViewController.swift */; };
 		2CADC14B278CB51F0035D95E /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADC14A278CB51F0035D95E /* PhotosViewController.swift */; };
@@ -43,6 +48,11 @@
 		2C802C80277A2AE700E307F1 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		2C84ED8327909D4E003A65C6 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		2C84EDA62790A584003A65C6 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		2C84EDA82790A6AF003A65C6 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		2C84EDA92790A6AF003A65C6 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		2C84EDAD2790ABDB003A65C6 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		2CADC141278C9F1F0035D95E /* RxMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxMain.storyboard; sourceTree = "<group>"; };
 		2CADC147278CA2FB0035D95E /* RxSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2CADC148278CB4E90035D95E /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
@@ -138,11 +148,40 @@
 			path = SwiftWithRxSwift;
 			sourceTree = "<group>";
 		};
+		2C84ED8227909C17003A65C6 /* NewsApp */ = {
+			isa = PBXGroup;
+			children = (
+				2C84EDAC2790ABCA003A65C6 /* Extensions */,
+				2C84EDA52790A579003A65C6 /* Models */,
+				2C84ED8327909D4E003A65C6 /* NewsTableViewController.swift */,
+				2C84EDA82790A6AF003A65C6 /* NewsTableViewCell.swift */,
+				2C84EDA92790A6AF003A65C6 /* NewsTableViewCell.xib */,
+			);
+			path = NewsApp;
+			sourceTree = "<group>";
+		};
+		2C84EDA52790A579003A65C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C84EDA62790A584003A65C6 /* Article.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C84EDAC2790ABCA003A65C6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C84EDAD2790ABDB003A65C6 /* URLRequest+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2CADC143278C9F710035D95E /* RxUdemy */ = {
 			isa = PBXGroup;
 			children = (
 				2CADC147278CA2FB0035D95E /* RxSwiftPlayground.playground */,
 				2CADC141278C9F1F0035D95E /* RxMain.storyboard */,
+				2C84ED8227909C17003A65C6 /* NewsApp */,
 				2C225D51278F3D26002117B7 /* TodoList */,
 				2C225D50278F3D1D002117B7 /* PhotoFilter */,
 			);
@@ -230,6 +269,7 @@
 				2C50C3552774BDCE00DC10CF /* Assets.xcassets in Resources */,
 				2CADC142278C9F1F0035D95E /* RxMain.storyboard in Resources */,
 				2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */,
+				2C84EDAB2790A6AF003A65C6 /* NewsTableViewCell.xib in Resources */,
 				2C50C3532774BDCD00DC10CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,16 +323,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C84EDA72790A584003A65C6 /* Article.swift in Sources */,
 				2C50C3502774BDCD00DC10CF /* ViewController.swift in Sources */,
+				2C84EDAA2790A6AF003A65C6 /* NewsTableViewCell.swift in Sources */,
 				2CADC14D278CBAC50035D95E /* PhotoCollectionViewCell.swift in Sources */,
 				2C50C34C2774BDCD00DC10CF /* AppDelegate.swift in Sources */,
 				2C50C34E2774BDCD00DC10CF /* SceneDelegate.swift in Sources */,
 				2C225D5B278F41F2002117B7 /* Task.swift in Sources */,
 				2CADC149278CB4E90035D95E /* PhotosCollectionViewController.swift in Sources */,
+				2C84ED8427909D4E003A65C6 /* NewsTableViewController.swift in Sources */,
 				2CADC14B278CB51F0035D95E /* PhotosViewController.swift in Sources */,
 				2C225D58278F40CB002117B7 /* AddTaskViewController.swift in Sources */,
 				2CE1E1D6278DDF9F00AC0821 /* FilterService.swift in Sources */,
 				2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */,
+				2C84EDAE2790ABDB003A65C6 /* URLRequest+Extensions.swift in Sources */,
 				2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */,
 				2C225D56278F3DFE002117B7 /* TaskListViewController.swift in Sources */,
 			);
@@ -442,11 +486,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VKGAQDGK5R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftWithRxSwift/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = test;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = RxMain;
@@ -459,6 +506,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boni.SwiftWithRxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,11 +519,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VKGAQDGK5R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftWithRxSwift/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = test;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = RxMain;
@@ -488,6 +539,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boni.SwiftWithRxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
