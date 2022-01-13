@@ -10,8 +10,6 @@ import RxSwift
 
 class AddTaskViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     @IBOutlet weak var taskTitleTextField: UITextField!
     
@@ -26,9 +24,6 @@ class AddTaskViewController: UIViewController {
 
     }
     
-    
-    
-
     @IBAction func saveButtonAction(_ sender: Any) {
         guard
             let priority = Priority(rawValue: self.prioritySegmentedControl.selectedSegmentIndex),
@@ -39,6 +34,4 @@ class AddTaskViewController: UIViewController {
         taskSubject.onNext(task)
         self.dismiss(animated: true, completion: nil)
     }
-    
-
 }

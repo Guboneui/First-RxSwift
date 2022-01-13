@@ -205,15 +205,75 @@ let strikes = PublishSubject<String>()
 //        print($0)
 //    }).disposed(by: disposeBag)
 
-let subject = PublishSubject<String>()
-let trigger = PublishSubject<String>()
+//let subject = PublishSubject<String>()
+//let trigger = PublishSubject<String>()
+//
+//subject.take(until: trigger)
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+//
+//subject.onNext("1")
+//subject.onNext("2")
+//trigger.onNext("X")
+//trigger.onNext("3")
 
-subject.take(until: trigger)
+
+// MARK: - 변환 연산자
+
+// toArray()
+//Observable.of(1, 3, 4, 5, 6)
+//    .toArray()
+//    .subscribe({
+//        print($0)
+//    }).disposed(by: disposeBag)
+
+// map
+//Observable.of(1, 2, 3, 4, 5)
+//    .map {
+//        return $0*2
+//    }.subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+
+// flatMap
+struct Student {
+    var score: BehaviorRelay<Int>
+    
+}
+
+//let john = Student(score: BehaviorRelay(value: 90))
+//let mary = Student(score: BehaviorRelay(value: 80))
+//
+//let student = PublishSubject<Student>()
+//student.asObserver()
+//    .flatMap {
+//        $0.score.asObservable()}
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+//
+//student.onNext(john)
+//john.score.accept(100)
+//
+//student.onNext(mary)
+//mary.score.accept(10)
+
+
+// flatMapLatest
+let john = Student(score: BehaviorRelay(value: 90))
+let mary = Student(score: BehaviorRelay(value: 80))
+
+let student = PublishSubject<Student>()
+student.asObserver()
+    .flatMapLatest {
+        $0.score.asObservable()}
     .subscribe(onNext: {
         print($0)
     }).disposed(by: disposeBag)
 
-subject.onNext("1")
-subject.onNext("2")
-trigger.onNext("X")
-trigger.onNext("3")
+student.onNext(john)
+john.score.accept(100)
+student.onNext(mary)
+john.score.accept(10)
+
