@@ -332,18 +332,31 @@ struct Student {
 //right.onNext(99)
 //right.onNext(2)
 
-let button = PublishSubject<String>()
-let textField = PublishSubject<String>()
+//let button = PublishSubject<String>()
+//let textField = PublishSubject<String>()
+//
+//let observable = button.withLatestFrom(textField)
+//let disposable = observable.subscribe(onNext: {
+//    print($0)
+//})
+//
+//textField.onNext("SW")
+//textField.onNext("Swift")
+//textField.onNext("Swift Study")
+//textField.onNext("last")
+//
+//button.onNext("")
+//button.onNext("")
 
-let observable = button.withLatestFrom(textField)
-let disposable = observable.subscribe(onNext: {
+let source = Observable.of(1, 2, 3)
+source.reduce(0, accumulator: +)
+    .subscribe(onNext: {
+        print($0)
+    }).disposed(by: disposeBag)
+
+source.reduce(0, accumulator: {
+    summary, newValue in
+    return summary + newValue
+}).subscribe(onNext: {
     print($0)
-})
-
-textField.onNext("SW")
-textField.onNext("Swift")
-textField.onNext("Swift Study")
-textField.onNext("last")
-
-button.onNext("")
-button.onNext("")
+}).disposed(by: disposeBag)
