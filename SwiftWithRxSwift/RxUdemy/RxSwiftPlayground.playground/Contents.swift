@@ -281,8 +281,16 @@ struct Student {
 
 // MARK: - combining operators
 // startWith 시작 부분에 데이터 삽입
-let numbers = Observable.of(2, 3, 4)
-let observable = numbers.startWith(1)
+//let numbers = Observable.of(2, 3, 4)
+//let observable = numbers.startWith(1)
+//observable.subscribe(onNext: {
+//    print($0)
+//}).disposed(by: disposeBag)
+
+
+let first = Observable.of(1, 2, 3)
+let second = Observable.of(4, 5, 6)
+let observable = Observable.concat([first, second])
 observable.subscribe(onNext: {
     print($0)
 }).disposed(by: disposeBag)
