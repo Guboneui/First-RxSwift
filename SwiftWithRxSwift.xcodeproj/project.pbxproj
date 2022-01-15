@@ -10,6 +10,10 @@
 		2C225D56278F3DFE002117B7 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C225D55278F3DFE002117B7 /* TaskListViewController.swift */; };
 		2C225D58278F40CB002117B7 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C225D57278F40CB002117B7 /* AddTaskViewController.swift */; };
 		2C225D5B278F41F2002117B7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C225D5A278F41F2002117B7 /* Task.swift */; };
+		2C2EB04C27932AE2008D5F29 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB04B27932AE2008D5F29 /* WeatherViewController.swift */; };
+		2C2EB04F27932C51008D5F29 /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB04E27932C51008D5F29 /* WeatherResult.swift */; };
+		2C2EB05227932E54008D5F29 /* URLRequest+Extensions+Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB05127932E54008D5F29 /* URLRequest+Extensions+Weather.swift */; };
+		2C2EB05427933313008D5F29 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB05327933313008D5F29 /* URL+Extensions.swift */; };
 		2C50C34C2774BDCD00DC10CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50C34B2774BDCD00DC10CF /* AppDelegate.swift */; };
 		2C50C34E2774BDCD00DC10CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50C34D2774BDCD00DC10CF /* SceneDelegate.swift */; };
 		2C50C3502774BDCD00DC10CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50C34F2774BDCD00DC10CF /* ViewController.swift */; };
@@ -37,6 +41,10 @@
 		2C225D55278F3DFE002117B7 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		2C225D57278F40CB002117B7 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		2C225D5A278F41F2002117B7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2C2EB04B27932AE2008D5F29 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		2C2EB04E27932C51008D5F29 /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
+		2C2EB05127932E54008D5F29 /* URLRequest+Extensions+Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions+Weather.swift"; sourceTree = "<group>"; };
+		2C2EB05327933313008D5F29 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		2C50C3482774BDCD00DC10CF /* SwiftWithRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWithRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C50C34B2774BDCD00DC10CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C50C34D2774BDCD00DC10CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +120,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2C2EB04A27932AC2008D5F29 /* WeatherApp */ = {
+			isa = PBXGroup;
+			children = (
+				2C2EB05027932E3A008D5F29 /* Extensions */,
+				2C2EB04D27932C3B008D5F29 /* Model */,
+				2C2EB04B27932AE2008D5F29 /* WeatherViewController.swift */,
+			);
+			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		2C2EB04D27932C3B008D5F29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C2EB04E27932C51008D5F29 /* WeatherResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C2EB05027932E3A008D5F29 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C2EB05127932E54008D5F29 /* URLRequest+Extensions+Weather.swift */,
+				2C2EB05327933313008D5F29 /* URL+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2C50C33F2774BDCD00DC10CF = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +216,7 @@
 			children = (
 				2CADC147278CA2FB0035D95E /* RxSwiftPlayground.playground */,
 				2CADC141278C9F1F0035D95E /* RxMain.storyboard */,
+				2C2EB04A27932AC2008D5F29 /* WeatherApp */,
 				2C84ED8227909C17003A65C6 /* NewsApp */,
 				2C225D51278F3D26002117B7 /* TodoList */,
 				2C225D50278F3D1D002117B7 /* PhotoFilter */,
@@ -324,19 +360,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C84EDA72790A584003A65C6 /* Article.swift in Sources */,
+				2C2EB04C27932AE2008D5F29 /* WeatherViewController.swift in Sources */,
 				2C50C3502774BDCD00DC10CF /* ViewController.swift in Sources */,
 				2C84EDAA2790A6AF003A65C6 /* NewsTableViewCell.swift in Sources */,
 				2CADC14D278CBAC50035D95E /* PhotoCollectionViewCell.swift in Sources */,
 				2C50C34C2774BDCD00DC10CF /* AppDelegate.swift in Sources */,
 				2C50C34E2774BDCD00DC10CF /* SceneDelegate.swift in Sources */,
 				2C225D5B278F41F2002117B7 /* Task.swift in Sources */,
+				2C2EB05227932E54008D5F29 /* URLRequest+Extensions+Weather.swift in Sources */,
 				2CADC149278CB4E90035D95E /* PhotosCollectionViewController.swift in Sources */,
+				2C2EB04F27932C51008D5F29 /* WeatherResult.swift in Sources */,
 				2C84ED8427909D4E003A65C6 /* NewsTableViewController.swift in Sources */,
 				2CADC14B278CB51F0035D95E /* PhotosViewController.swift in Sources */,
 				2C225D58278F40CB002117B7 /* AddTaskViewController.swift in Sources */,
 				2CE1E1D6278DDF9F00AC0821 /* FilterService.swift in Sources */,
 				2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */,
 				2C84EDAE2790ABDB003A65C6 /* URLRequest+Extensions.swift in Sources */,
+				2C2EB05427933313008D5F29 /* URL+Extensions.swift in Sources */,
 				2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */,
 				2C225D56278F3DFE002117B7 /* TaskListViewController.swift in Sources */,
 			);

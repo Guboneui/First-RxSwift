@@ -44,15 +44,15 @@ class NewsTableViewController: UITableViewController {
         //let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=51ac15cf484c4caa9a51b27a97602024")!
         //let resource = Resource<ArticlesList>(url: url)
         
-        URLRequest.load(resource: ArticlesList.all)
-            .subscribe(onNext: {[weak self] result in
-                if let result = result {
-                    self?.articles = result.articles
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                    }
-                }
-            }).disposed(by: disposeBag)
+//        URLRequest.load(resource: ArticlesList.all)
+//            .subscribe(onNext: {[weak self] result in
+//                if let result = result {
+//                    self?.articles = result.articles
+//                    DispatchQueue.main.async {
+//                        self?.tableView.reloadData()
+//                    }
+//                }
+//            }).disposed(by: disposeBag)
     }
     
     
