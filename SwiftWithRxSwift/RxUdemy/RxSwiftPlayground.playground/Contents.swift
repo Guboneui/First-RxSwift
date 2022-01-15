@@ -261,19 +261,28 @@ struct Student {
 
 
 // flatMapLatest
-let john = Student(score: BehaviorRelay(value: 90))
-let mary = Student(score: BehaviorRelay(value: 80))
+//let john = Student(score: BehaviorRelay(value: 90))
+//let mary = Student(score: BehaviorRelay(value: 80))
+//
+//let student = PublishSubject<Student>()
+//student.asObserver()
+//    .flatMapLatest {
+//        $0.score.asObservable()}
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+//
+//student.onNext(john)
+//john.score.accept(100)
+//student.onNext(mary)
+//john.score.accept(10)
+//
 
-let student = PublishSubject<Student>()
-student.asObserver()
-    .flatMapLatest {
-        $0.score.asObservable()}
-    .subscribe(onNext: {
-        print($0)
-    }).disposed(by: disposeBag)
 
-student.onNext(john)
-john.score.accept(100)
-student.onNext(mary)
-john.score.accept(10)
-
+// MARK: - combining operators
+// startWith 시작 부분에 데이터 삽입
+let numbers = Observable.of(2, 3, 4)
+let observable = numbers.startWith(1)
+observable.subscribe(onNext: {
+    print($0)
+}).disposed(by: disposeBag)
