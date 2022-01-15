@@ -314,20 +314,36 @@ struct Student {
 //right.onNext(1)
 //left.onNext(99)
 
-let left = PublishSubject<Int>()
-let right = PublishSubject<Int>()
+//let left = PublishSubject<Int>()
+//let right = PublishSubject<Int>()
+//
+//let observable = Observable.combineLatest(left, right, resultSelector: {
+//    lastLeft, lastRight in
+//    "\(lastLeft) \(lastRight)"
+//})
+//
+//let disposable = observable.subscribe(onNext: { value in
+//    print(value)
+//})
+//
+//left.onNext(45)
+//right.onNext(1)
+//left.onNext(30)
+//right.onNext(99)
+//right.onNext(2)
 
-let observable = Observable.combineLatest(left, right, resultSelector: {
-    lastLeft, lastRight in
-    "\(lastLeft) \(lastRight)"
+let button = PublishSubject<String>()
+let textField = PublishSubject<String>()
+
+let observable = button.withLatestFrom(textField)
+let disposable = observable.subscribe(onNext: {
+    print($0)
 })
 
-let disposable = observable.subscribe(onNext: { value in
-    print(value)
-})
+textField.onNext("SW")
+textField.onNext("Swift")
+textField.onNext("Swift Study")
+textField.onNext("last")
 
-left.onNext(45)
-right.onNext(1)
-left.onNext(30)
-right.onNext(99)
-right.onNext(2)
+button.onNext("")
+button.onNext("")
