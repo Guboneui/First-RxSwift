@@ -348,15 +348,21 @@ struct Student {
 //button.onNext("")
 //button.onNext("")
 
-let source = Observable.of(1, 2, 3)
-source.reduce(0, accumulator: +)
+//let source = Observable.of(1, 2, 3)
+//source.reduce(0, accumulator: +)
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposeBag)
+//
+//source.reduce(0, accumulator: {
+//    summary, newValue in
+//    return summary + newValue
+//}).subscribe(onNext: {
+//    print($0)
+//}).disposed(by: disposeBag)
+
+let source = Observable.of(1, 2, 3, 4, 5, 6)
+source.scan(0, accumulator: -)
     .subscribe(onNext: {
         print($0)
     }).disposed(by: disposeBag)
-
-source.reduce(0, accumulator: {
-    summary, newValue in
-    return summary + newValue
-}).subscribe(onNext: {
-    print($0)
-}).disposed(by: disposeBag)
