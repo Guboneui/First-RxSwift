@@ -366,3 +366,9 @@ source.scan(0, accumulator: -)
     .subscribe(onNext: {
         print($0)
     }).disposed(by: disposeBag)
+
+
+var n = 0
+while n<5 {
+    print(n)
+    n += 1 }
