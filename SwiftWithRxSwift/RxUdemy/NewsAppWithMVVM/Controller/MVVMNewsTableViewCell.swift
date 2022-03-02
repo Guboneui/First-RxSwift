@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MVVMNewsTableViewCell: UITableViewCell {
 
@@ -14,6 +15,7 @@ class MVVMNewsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
