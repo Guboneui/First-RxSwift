@@ -23,6 +23,8 @@
 		2C70CF6627CFBBDE0018BFD3 /* RxEampleStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C70CF6527CFBBDE0018BFD3 /* RxEampleStoryBoard.storyboard */; };
 		2C70CF7027CFC7F70018BFD3 /* Numbers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C70CF6F27CFC7F70018BFD3 /* Numbers.storyboard */; };
 		2C70CF7227CFC82D0018BFD3 /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70CF7127CFC82D0018BFD3 /* NumbersViewController.swift */; };
+		2C70CF7527CFD5590018BFD3 /* SimpleValidation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C70CF7427CFD5590018BFD3 /* SimpleValidation.storyboard */; };
+		2C70CF7727CFD5630018BFD3 /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70CF7627CFD5630018BFD3 /* SimpleValidationViewController.swift */; };
 		2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C80277A2AE700E307F1 /* TestTableViewController.swift */; };
 		2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */; };
 		2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */; };
@@ -65,6 +67,8 @@
 		2C70CF6527CFBBDE0018BFD3 /* RxEampleStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxEampleStoryBoard.storyboard; sourceTree = "<group>"; };
 		2C70CF6F27CFC7F70018BFD3 /* Numbers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Numbers.storyboard; sourceTree = "<group>"; };
 		2C70CF7127CFC82D0018BFD3 /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
+		2C70CF7427CFD5590018BFD3 /* SimpleValidation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleValidation.storyboard; sourceTree = "<group>"; };
+		2C70CF7627CFD5630018BFD3 /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
 		2C802C80277A2AE700E307F1 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				2C70CF6527CFBBDE0018BFD3 /* RxEampleStoryBoard.storyboard */,
+				2C70CF7327CFD54A0018BFD3 /* SimpleValidation */,
 				2C70CF6E27CFC7E60018BFD3 /* Numbers */,
 			);
 			path = Example;
@@ -226,6 +231,15 @@
 				2C70CF7127CFC82D0018BFD3 /* NumbersViewController.swift */,
 			);
 			path = Numbers;
+			sourceTree = "<group>";
+		};
+		2C70CF7327CFD54A0018BFD3 /* SimpleValidation */ = {
+			isa = PBXGroup;
+			children = (
+				2C70CF7427CFD5590018BFD3 /* SimpleValidation.storyboard */,
+				2C70CF7627CFD5630018BFD3 /* SimpleValidationViewController.swift */,
+			);
+			path = SimpleValidation;
 			sourceTree = "<group>";
 		};
 		2C84ED8227909C17003A65C6 /* NewsApp */ = {
@@ -393,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C50C3582774BDCE00DC10CF /* LaunchScreen.storyboard in Resources */,
+				2C70CF7527CFD5590018BFD3 /* SimpleValidation.storyboard in Resources */,
 				2C50C3552774BDCE00DC10CF /* Assets.xcassets in Resources */,
 				2C70CF7027CFC7F70018BFD3 /* Numbers.storyboard in Resources */,
 				2CA2BB122794211600F8D107 /* MVVMNewsTableViewCell.xib in Resources */,
@@ -455,6 +470,7 @@
 			files = (
 				2C84EDA72790A584003A65C6 /* Article.swift in Sources */,
 				2C2EB04C27932AE2008D5F29 /* WeatherViewController.swift in Sources */,
+				2C70CF7727CFD5630018BFD3 /* SimpleValidationViewController.swift in Sources */,
 				2CA2BB112794211600F8D107 /* MVVMNewsTableViewCell.swift in Sources */,
 				2CA2BB1E2794274100F8D107 /* ArticleViewModel.swift in Sources */,
 				2CA2BB0C279420ED00F8D107 /* MVVMNewsViewController.swift in Sources */,

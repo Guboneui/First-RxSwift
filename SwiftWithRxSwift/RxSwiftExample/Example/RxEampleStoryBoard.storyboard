@@ -37,10 +37,27 @@
                                                     <segue destination="CLs-nt-m5D" kind="push" id="4EF-E4-jGa"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy2-9H-o1b">
+                                                <rect key="frame" x="0.0" y="48" width="414" height="40"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="dtr-9C-4Cc"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Simple Validation">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="xXO-sI-YF4" kind="push" id="HiK-aZ-YV5"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="HGL-Nb-cnf" secondAttribute="trailing" id="4lY-rZ-3Pb"/>
+                                            <constraint firstAttribute="trailing" secondItem="gy2-9H-o1b" secondAttribute="trailing" id="6RK-92-qoD"/>
+                                            <constraint firstItem="gy2-9H-o1b" firstAttribute="leading" secondItem="7uh-Xt-pZ6" secondAttribute="leading" id="ILP-I9-H2j"/>
+                                            <constraint firstItem="gy2-9H-o1b" firstAttribute="top" secondItem="HGL-Nb-cnf" secondAttribute="bottom" constant="8" id="Jp5-x6-pIG"/>
                                             <constraint firstItem="HGL-Nb-cnf" firstAttribute="leading" secondItem="7uh-Xt-pZ6" secondAttribute="leading" id="Lf2-73-kNd"/>
                                             <constraint firstAttribute="height" constant="800" id="fkq-Ll-xQw"/>
                                             <constraint firstItem="HGL-Nb-cnf" firstAttribute="top" secondItem="7uh-Xt-pZ6" secondAttribute="top" id="pd9-De-36W"/>
@@ -81,7 +98,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fS-Qh-ekA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669" y="-140"/>
+            <point key="canvasLocation" x="1404" y="-158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AcA-6o-1Wf">
@@ -100,6 +117,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgN-B5-vxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="86.956521739130437" y="69.642857142857139"/>
+        </scene>
+        <!--SimpleValidation-->
+        <scene sceneID="Gh1-XP-ei5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SimpleValidation" id="xXO-sI-YF4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ECl-jG-4JB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HEz-MY-4MO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1437" y="-122"/>
         </scene>
     </scenes>
     <resources>
