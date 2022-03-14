@@ -25,6 +25,7 @@
 		2C70CF7227CFC82D0018BFD3 /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70CF7127CFC82D0018BFD3 /* NumbersViewController.swift */; };
 		2C70CF7527CFD5590018BFD3 /* SimpleValidation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C70CF7427CFD5590018BFD3 /* SimpleValidation.storyboard */; };
 		2C70CF7727CFD5630018BFD3 /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70CF7627CFD5630018BFD3 /* SimpleValidationViewController.swift */; };
+		2C79D38B27DFBCF60075C80D /* RxSwift4Hour.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C79D38A27DFBCF60075C80D /* RxSwift4Hour.storyboard */; };
 		2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C80277A2AE700E307F1 /* TestTableViewController.swift */; };
 		2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */; };
 		2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */; };
@@ -69,6 +70,7 @@
 		2C70CF7127CFC82D0018BFD3 /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
 		2C70CF7427CFD5590018BFD3 /* SimpleValidation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleValidation.storyboard; sourceTree = "<group>"; };
 		2C70CF7627CFD5630018BFD3 /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
+		2C79D38A27DFBCF60075C80D /* RxSwift4Hour.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxSwift4Hour.storyboard; sourceTree = "<group>"; };
 		2C802C80277A2AE700E307F1 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		2C50C34A2774BDCD00DC10CF /* SwiftWithRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2C79D38927DFBCE50075C80D /* RxSwift4Hour */,
 				2C70CF6127CFBB710018BFD3 /* RxSwiftExample */,
 				2C50C34B2774BDCD00DC10CF /* AppDelegate.swift */,
 				2C50C34D2774BDCD00DC10CF /* SceneDelegate.swift */,
@@ -240,6 +243,14 @@
 				2C70CF7627CFD5630018BFD3 /* SimpleValidationViewController.swift */,
 			);
 			path = SimpleValidation;
+			sourceTree = "<group>";
+		};
+		2C79D38927DFBCE50075C80D /* RxSwift4Hour */ = {
+			isa = PBXGroup;
+			children = (
+				2C79D38A27DFBCF60075C80D /* RxSwift4Hour.storyboard */,
+			);
+			path = RxSwift4Hour;
 			sourceTree = "<group>";
 		};
 		2C84ED8227909C17003A65C6 /* NewsApp */ = {
@@ -412,6 +423,7 @@
 				2C70CF7027CFC7F70018BFD3 /* Numbers.storyboard in Resources */,
 				2CA2BB122794211600F8D107 /* MVVMNewsTableViewCell.xib in Resources */,
 				2C70CF6627CFBBDE0018BFD3 /* RxEampleStoryBoard.storyboard in Resources */,
+				2C79D38B27DFBCF60075C80D /* RxSwift4Hour.storyboard in Resources */,
 				2CADC142278C9F1F0035D95E /* RxMain.storyboard in Resources */,
 				2C802C85277A2B3100E307F1 /* MainTableViewCell.xib in Resources */,
 				2C84EDAB2790A6AF003A65C6 /* NewsTableViewCell.xib in Resources */,
@@ -652,7 +664,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = RxEampleStoryBoard;
+				INFOPLIST_KEY_UIMainStoryboardFile = RxSwift4Hour;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -685,7 +697,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = RxEampleStoryBoard;
+				INFOPLIST_KEY_UIMainStoryboardFile = RxSwift4Hour;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
