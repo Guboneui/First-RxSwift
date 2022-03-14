@@ -14,6 +14,9 @@ import RxSwift
 // 각각의 역할들은 다시 정리할 예정이며,
 // 자세한 내용은 해당 링크에서 확인할 수 있다. -> https://reactivex.io/documentation/ko/observable.html
 
+
+// 일반적인 로직에서 비동기 처리를 하기 위해서는 DispatchQueue.global().async 를 통해서 비동기 처리로 진행을 해준다.
+// 단, UI를 처리하는 로직은 main에서 처리해 준다
 class RxSwift4HourViewController: UIViewController {
 
     override func viewDidLoad() {
