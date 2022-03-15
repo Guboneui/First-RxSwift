@@ -17,13 +17,53 @@ import RxSwift
 
 // 일반적인 로직에서 비동기 처리를 하기 위해서는 DispatchQueue.global().async 를 통해서 비동기 처리로 진행을 해준다.
 // 단, UI를 처리하는 로직은 main에서 처리해 준다
+
+
 class RxSwift4HourViewController: UIViewController {
 
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var countLabel: UILabel!
+    
+    var counter: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            self.counter += 1
+            self.countLabel.text = "\(self.counter)"
+        }
     }
     
+    @IBAction func onLoadImage(_ sender: Any) {
+        self.imageView.image = nil
+        
+        _ = rxswiftLoadImage(from: LARGE_IMAGE_URL)
+            .observe(on: MainScheduler.instance)
+            .subscribe({ result in
+                switch result {
+                case let .next(image):
+                    self.imageView.image = image
+                case let .error(error):
+                    print(error.localizedDescription)
+                
+                case .completed:
+                    break
+                }
+                
+            })
+    }
+    
+    
+    func rxswiftLoadImage(from imageUrl: String) -> Observable<UIImage?> {
+        return Observable.create { seal in
+            asyncLoadImage(from: imageUrl) { image in
+                seal.onNext(image)
+                seal.onCompleted()
+            }
+            return Disposables.create()
+        }
+    }
 
 }

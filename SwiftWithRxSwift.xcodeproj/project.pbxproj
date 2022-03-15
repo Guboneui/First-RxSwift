@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C205E5627E11D740049707A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C205E5527E11D740049707A /* Common.swift */; };
 		2C225D56278F3DFE002117B7 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C225D55278F3DFE002117B7 /* TaskListViewController.swift */; };
 		2C225D58278F40CB002117B7 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C225D57278F40CB002117B7 /* AddTaskViewController.swift */; };
 		2C225D5B278F41F2002117B7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C225D5A278F41F2002117B7 /* Task.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		0614D770F73FFF1B7AAF0C6A /* Pods_SwiftWithRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWithRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C205E5527E11D740049707A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		2C225D55278F3DFE002117B7 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		2C225D57278F40CB002117B7 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		2C225D5A278F41F2002117B7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				2C79D38A27DFBCF60075C80D /* RxSwift4Hour.storyboard */,
 				2C79D38C27DFDC1B0075C80D /* RxSwift4HourViewController.swift */,
+				2C205E5527E11D740049707A /* Common.swift */,
 			);
 			path = RxSwift4Hour;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				2CADC14D278CBAC50035D95E /* PhotoCollectionViewCell.swift in Sources */,
 				2C50C34C2774BDCD00DC10CF /* AppDelegate.swift in Sources */,
 				2C50C34E2774BDCD00DC10CF /* SceneDelegate.swift in Sources */,
+				2C205E5627E11D740049707A /* Common.swift in Sources */,
 				2C225D5B278F41F2002117B7 /* Task.swift in Sources */,
 				2C2EB05227932E54008D5F29 /* URLRequest+Extensions+Weather.swift in Sources */,
 				2CADC149278CB4E90035D95E /* PhotosCollectionViewController.swift in Sources */,
