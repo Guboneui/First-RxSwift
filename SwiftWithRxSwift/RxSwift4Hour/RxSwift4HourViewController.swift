@@ -26,6 +26,7 @@ class RxSwift4HourViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     
     var counter: Int = 0
+    var disposable: Disposable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +40,11 @@ class RxSwift4HourViewController: UIViewController {
     @IBAction func onLoadImage(_ sender: Any) {
         self.imageView.image = nil
         
-        _ = rxswiftLoadImage(from: LARGE_IMAGE_URL)
+        disposable = rxswiftLoadImage(from: LARGE_IMAGE_URL)
             .observe(on: MainScheduler.instance)
             .subscribe({ result in
+                // subscribe 된 것을 변수를 통해서 받는다
+                // subscribe를 할 경우 disposable이 리턴됨
                 switch result {
                 case let .next(image):
                     self.imageView.image = image
@@ -55,6 +58,9 @@ class RxSwift4HourViewController: UIViewController {
             })
     }
     
+    @IBAction func onCancel(_ sender: Any) {
+        disposable?.dispose()
+    }
     
     func rxswiftLoadImage(from imageUrl: String) -> Observable<UIImage?> {
         return Observable.create { seal in
