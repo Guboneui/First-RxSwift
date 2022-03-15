@@ -26,7 +26,7 @@ class RxSwift4HourViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     
     var counter: Int = 0
-    var disposable: Disposable?
+    var disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class RxSwift4HourViewController: UIViewController {
     @IBAction func onLoadImage(_ sender: Any) {
         self.imageView.image = nil
         
-        disposable = rxswiftLoadImage(from: LARGE_IMAGE_URL)
+        rxswiftLoadImage(from: LARGE_IMAGE_URL)
             .observe(on: MainScheduler.instance)
             .subscribe({ result in
                 // subscribe 된 것을 변수를 통해서 받는다
@@ -56,10 +56,14 @@ class RxSwift4HourViewController: UIViewController {
                 }
                 
             })
+            .disposed(by: disposeBag)
+        
     }
     
     @IBAction func onCancel(_ sender: Any) {
-        disposable?.dispose()
+        disposeBag = DisposeBag()
+        // disposeBag은 Dispose 메소드를 제공하지 않는다.
+        // 따라서 새로 만들어서 기존의 내용을 삭제 해준다.
     }
     
     func rxswiftLoadImage(from imageUrl: String) -> Observable<UIImage?> {
