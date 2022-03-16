@@ -75,5 +75,33 @@ class RxSwift4HourViewController: UIViewController {
             return Disposables.create()
         }
     }
-
+    
+    
+    // 옵저버블을 리턴하기 위해서 기존에는
+    // onCreate -> onNext를 통해서 인자를 전달
+    // 하지만 해당 과정의 귀찮아서
+    // 오퍼레이터를 통해서 데이터를 직접 받을 수 있도록 create 해준다.
+    
+    // RxSwift의 기본 작동 방식
+    // 옵저버블을 만들고(ex. create, 오퍼레이터(just...)
+    // 이것을 구독 (subscribe)
+    // 구독을 하게 되면 옵저버블에서 만들어진 데이터가 클로저의 인자로 넘어오게 됨.
+    
+    
+    @IBAction func firstJustClicked(_ sender: Any) {
+        Observable.just("Hello, This is First just button")
+            .subscribe(onNext: { str in
+                print(str)
+            }).disposed(by: disposeBag)
+    }
+    
+    
+    @IBAction func secondJustClicked(_ sender: Any) {
+        // just를 통해 문자열을 전달할 수도 있지만, 배열(컬렉션) 또한 전달할 수 있다.
+        Observable.just(["this", "is", "first", "just", "button"])
+            .subscribe(onNext: { arr in
+                print(arr)
+            }).disposed(by: disposeBag)
+        
+    }
 }

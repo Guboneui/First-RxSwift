@@ -39,15 +39,39 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ck-vA-a9G">
-                                <rect key="frame" x="362" y="369.5" width="42" height="21"/>
+                                <rect key="frame" x="362.5" y="370" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-wP-fvJ">
+                                <rect key="frame" x="20" y="425.5" width="374" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pO3-XL-h3R">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="31"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="First Just"/>
+                                        <connections>
+                                            <action selector="firstJustClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ACK-J1-sT4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgd-IL-0d5">
+                                        <rect key="frame" x="210" y="0.0" width="164" height="31"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Second Just"/>
+                                        <connections>
+                                            <action selector="secondJustClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="glX-A9-Bg9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CrQ-wP-fvJ" secondAttribute="trailing" constant="20" id="0B0-FY-amZ"/>
                             <constraint firstItem="5ck-vA-a9G" firstAttribute="centerY" secondItem="Z77-68-uBH" secondAttribute="centerY" id="36R-ni-o3k"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6M9-3f-e2S" secondAttribute="trailing" id="4Bj-J5-WEX"/>
                             <constraint firstItem="6M9-3f-e2S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="85N-z7-YDc"/>
@@ -56,6 +80,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5ck-vA-a9G" secondAttribute="trailing" constant="10" id="Ttu-pJ-Kt8"/>
                             <constraint firstItem="6M9-3f-e2S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="X0B-F8-h8z"/>
                             <constraint firstItem="Z77-68-uBH" firstAttribute="leading" secondItem="Pzu-e2-pb4" secondAttribute="trailing" constant="20" id="e76-rl-0H1"/>
+                            <constraint firstItem="CrQ-wP-fvJ" firstAttribute="top" secondItem="Pzu-e2-pb4" secondAttribute="bottom" constant="30" id="mbG-b2-7yF"/>
+                            <constraint firstItem="CrQ-wP-fvJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="t00-T2-fBO"/>
                             <constraint firstItem="Pzu-e2-pb4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="yng-hl-j7l"/>
                         </constraints>
                     </view>
