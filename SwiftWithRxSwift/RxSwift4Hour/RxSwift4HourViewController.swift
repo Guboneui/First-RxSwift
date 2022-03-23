@@ -104,4 +104,18 @@ class RxSwift4HourViewController: UIViewController {
             }).disposed(by: disposeBag)
         
     }
+    
+    
+    @IBAction func firstFromClicked(_ sender: Any) {
+        Observable.from(["This", "is", "From", "오퍼레이터"])
+            .subscribe(onNext: {
+                print($0)
+            }).disposed(by: disposeBag)
+    }
+    
+    
+    
+    
+    
+    
 }

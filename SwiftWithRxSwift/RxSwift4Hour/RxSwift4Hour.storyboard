@@ -67,6 +67,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-oY-Jwm">
+                                <rect key="frame" x="20" y="486.5" width="374" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoZ-nP-Ggs">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="First From"/>
+                                        <connections>
+                                            <action selector="firstFromClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xai-Id-z3S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,13 +89,16 @@
                             <constraint firstItem="5ck-vA-a9G" firstAttribute="centerY" secondItem="Z77-68-uBH" secondAttribute="centerY" id="36R-ni-o3k"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6M9-3f-e2S" secondAttribute="trailing" id="4Bj-J5-WEX"/>
                             <constraint firstItem="6M9-3f-e2S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="85N-z7-YDc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BgF-oY-Jwm" secondAttribute="trailing" constant="20" id="8Cn-py-X23"/>
                             <constraint firstItem="Z77-68-uBH" firstAttribute="top" secondItem="6M9-3f-e2S" secondAttribute="bottom" constant="10" id="FbI-QW-Tox"/>
+                            <constraint firstItem="BgF-oY-Jwm" firstAttribute="top" secondItem="CrQ-wP-fvJ" secondAttribute="bottom" constant="30" id="JaR-hm-fCJ"/>
                             <constraint firstItem="Pzu-e2-pb4" firstAttribute="top" secondItem="6M9-3f-e2S" secondAttribute="bottom" constant="10" id="OK7-A8-U2e"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5ck-vA-a9G" secondAttribute="trailing" constant="10" id="Ttu-pJ-Kt8"/>
                             <constraint firstItem="6M9-3f-e2S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="X0B-F8-h8z"/>
                             <constraint firstItem="Z77-68-uBH" firstAttribute="leading" secondItem="Pzu-e2-pb4" secondAttribute="trailing" constant="20" id="e76-rl-0H1"/>
                             <constraint firstItem="CrQ-wP-fvJ" firstAttribute="top" secondItem="Pzu-e2-pb4" secondAttribute="bottom" constant="30" id="mbG-b2-7yF"/>
                             <constraint firstItem="CrQ-wP-fvJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="t00-T2-fBO"/>
+                            <constraint firstItem="BgF-oY-Jwm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="x3F-jR-lqS"/>
                             <constraint firstItem="Pzu-e2-pb4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="yng-hl-j7l"/>
                         </constraints>
                     </view>
