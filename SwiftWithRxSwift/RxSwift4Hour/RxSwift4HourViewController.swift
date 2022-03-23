@@ -144,6 +144,13 @@ class RxSwift4HourViewController: UIViewController {
         
     }
     
+    @IBAction func firstFilterClicked(_ sender: Any) {
+        Observable.from([1, 2, 3, 4, 5, 6, 7, 8, 9])
+            .filter{ $0 % 2 == 0 }
+            .subscribe(onNext: { number in
+                print(number)
+            }).disposed(by: disposeBag)
+    }
     
     
     
