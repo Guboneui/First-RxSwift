@@ -107,6 +107,7 @@ class RxSwift4HourViewController: UIViewController {
     
     
     @IBAction func firstFromClicked(_ sender: Any) {
+        // from은 배열의 요소들을 하나씩 보내줌
         Observable.from(["This", "is", "From", "오퍼레이터"])
             .subscribe(onNext: {
                 print($0)
@@ -114,6 +115,34 @@ class RxSwift4HourViewController: UIViewController {
     }
     
     
+    @IBAction func firstMapClicked(_ sender: Any) {
+        // map은 단독 사용은 안되며, just 또는 from으로 부터 내려온 값을 변형 또는 합쳐주는 역할을 함.
+        Observable.just("Hello")
+            .map{ str in "\(str) RxSwift"}
+            .subscribe(onNext: { str in
+                print(str)
+                
+            }).disposed(by: disposeBag)
+    }
+    
+    
+    @IBAction func secondMapClicked(_ sender: Any) {
+//        Observable.from(["a", "b", "c"])
+//            .map{"\($0) + This is Arr"}
+//            .subscribe(onNext: { str in
+//                print(str)
+//                print(type(of: str))
+//
+//            }).disposed(by: disposeBag)
+        
+//        Observable.from(["a", "b", "c"])
+//            .map{ $0.count }
+//            .subscribe(onNext: {
+//                print("\($0), \(type(of: $0))")
+//            }).disposed(by: disposeBag)
+        
+        
+    }
     
     
     

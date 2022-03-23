@@ -81,6 +81,29 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="dqt-l0-GOO">
+                                <rect key="frame" x="20" y="547.5" width="374" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqV-9d-TGZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="31"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Map1"/>
+                                        <connections>
+                                            <action selector="firstMapClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="McM-sw-cyK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb1-BA-FLf">
+                                        <rect key="frame" x="210" y="0.0" width="164" height="31"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Map2"/>
+                                        <connections>
+                                            <action selector="secondMapClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cGU-U5-OvE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,7 +116,10 @@
                             <constraint firstItem="Z77-68-uBH" firstAttribute="top" secondItem="6M9-3f-e2S" secondAttribute="bottom" constant="10" id="FbI-QW-Tox"/>
                             <constraint firstItem="BgF-oY-Jwm" firstAttribute="top" secondItem="CrQ-wP-fvJ" secondAttribute="bottom" constant="30" id="JaR-hm-fCJ"/>
                             <constraint firstItem="Pzu-e2-pb4" firstAttribute="top" secondItem="6M9-3f-e2S" secondAttribute="bottom" constant="10" id="OK7-A8-U2e"/>
+                            <constraint firstItem="dqt-l0-GOO" firstAttribute="top" secondItem="BgF-oY-Jwm" secondAttribute="bottom" constant="30" id="PVX-gD-1gE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5ck-vA-a9G" secondAttribute="trailing" constant="10" id="Ttu-pJ-Kt8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dqt-l0-GOO" secondAttribute="trailing" constant="20" id="UyK-Ld-uPc"/>
+                            <constraint firstItem="dqt-l0-GOO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Wgv-vx-MrR"/>
                             <constraint firstItem="6M9-3f-e2S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="X0B-F8-h8z"/>
                             <constraint firstItem="Z77-68-uBH" firstAttribute="leading" secondItem="Pzu-e2-pb4" secondAttribute="trailing" constant="20" id="e76-rl-0H1"/>
                             <constraint firstItem="CrQ-wP-fvJ" firstAttribute="top" secondItem="Pzu-e2-pb4" secondAttribute="bottom" constant="30" id="mbG-b2-7yF"/>
