@@ -183,6 +183,7 @@ class RxSwift4HourViewController: UIViewController {
     
     @IBAction func thirdMapClicked(_ sender: Any) {
         Observable.just("800x600")
+            .observe(on: ConcurrentDispatchQueueScheduler.init(qos: .default))
             .map { $0.replacingOccurrences(of: "x", with: "/") }
             .map { "https://picsum.photos/\($0)/?random" }
             .map { URL(string: $0) }
@@ -190,6 +191,7 @@ class RxSwift4HourViewController: UIViewController {
             .map { $0! }
             .map { try Data(contentsOf: $0) }
             .map { UIImage(data: $0) }
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { image in
                 self.imageView.image = image
             })
