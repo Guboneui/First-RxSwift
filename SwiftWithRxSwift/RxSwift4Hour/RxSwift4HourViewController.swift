@@ -193,6 +193,10 @@ class RxSwift4HourViewController: UIViewController {
             .map { try Data(contentsOf: $0) }
             .map { UIImage(data: $0) }
             .observe(on: MainScheduler.instance)
+            .do(onNext: { image in
+                print(image?.size ?? 0)
+                
+            })
             .subscribe(onNext: { image in
                 self.imageView.image = image
             })
