@@ -89,9 +89,15 @@ class RxSwift4HourViewController: UIViewController {
     
     
     @IBAction func firstJustClicked(_ sender: Any) {
-        Observable.just("Hello, This is First just button")
-            .subscribe(onNext: { str in
-                print(str)
+//        Observable.just("Hello, This is First just button")
+//            .subscribe(onNext: { str in
+//                print(str)
+//            }).disposed(by: disposeBag)
+        
+        Observable.just("test String")
+             
+            .subscribe(onNext: {
+                print($0)
             }).disposed(by: disposeBag)
     }
     
@@ -108,10 +114,32 @@ class RxSwift4HourViewController: UIViewController {
     
     @IBAction func firstFromClicked(_ sender: Any) {
         // from은 배열의 요소들을 하나씩 보내줌
-        Observable.from(["This", "is", "From", "오퍼레이터"])
-            .subscribe(onNext: {
-                print($0)
+//        Observable.from(["This", "is", "From", "오퍼레이터"])
+//            .subscribe(onNext: {
+//                print($0)
+//            }).disposed(by: disposeBag)
+        
+        Observable.from(["a", "b", "c", "d"])
+            .subscribe({ event in
+                
+                switch event {
+                case .next(let str):
+                    print("next: \(str)")
+                    break
+                
+                case .error(let error):
+                    print("error: \(error.localizedDescription)")
+                    break
+                    
+                case .completed:
+                    print("completed")
+                    break
+                }
+                
             }).disposed(by: disposeBag)
+        
+        
+        
     }
     
     
