@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C07635427ECDB3E009FF544 /* RxCocoaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C07635327ECDB3E009FF544 /* RxCocoaTestViewController.swift */; };
 		2C205E5627E11D740049707A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C205E5527E11D740049707A /* Common.swift */; };
 		2C225D56278F3DFE002117B7 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C225D55278F3DFE002117B7 /* TaskListViewController.swift */; };
 		2C225D58278F40CB002117B7 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C225D57278F40CB002117B7 /* AddTaskViewController.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		0614D770F73FFF1B7AAF0C6A /* Pods_SwiftWithRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWithRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C07635327ECDB3E009FF544 /* RxCocoaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaTestViewController.swift; sourceTree = "<group>"; };
 		2C205E5527E11D740049707A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		2C225D55278F3DFE002117B7 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		2C225D57278F40CB002117B7 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				2C79D38A27DFBCF60075C80D /* RxSwift4Hour.storyboard */,
 				2C79D38C27DFDC1B0075C80D /* RxSwift4HourViewController.swift */,
 				2C205E5527E11D740049707A /* Common.swift */,
+				2C07635327ECDB3E009FF544 /* RxCocoaTestViewController.swift */,
 			);
 			path = RxSwift4Hour;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C07635427ECDB3E009FF544 /* RxCocoaTestViewController.swift in Sources */,
 				2C84EDA72790A584003A65C6 /* Article.swift in Sources */,
 				2C2EB04C27932AE2008D5F29 /* WeatherViewController.swift in Sources */,
 				2C70CF7727CFD5630018BFD3 /* SimpleValidationViewController.swift in Sources */,
