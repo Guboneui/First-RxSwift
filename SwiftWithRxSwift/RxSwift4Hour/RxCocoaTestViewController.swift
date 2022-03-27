@@ -65,6 +65,21 @@ class RxCocoaTestViewController: UIViewController {
     
         
         // output: 불릿, 로그인 버튼 enable,
+        
+        idValid.subscribe(onNext: { check in
+            self.idValidView.isHidden = check
+        }).disposed(by: disposeBag)
+        
+        pwValid.subscribe(onNext: { check in
+            self.pwValidView.isHidden = check
+        }).disposed(by: disposeBag)
+        
+        Observable.combineLatest(self.idValid, self.pwValid, resultSelector: {$0 && $1 })
+            .subscribe(onNext: { check in
+                self.loginButton.isEnabled = check
+            }).disposed(by: disposeBag)
+        
+        
     
 //        idValidOvservable.subscribe(onNext: { check in self.idValidView.isHidden = check }).disposed(by: disposeBag)
 //        pwValidObservable.subscribe(onNext: { check in self.pwValidView.isHidden = check }).disposed(by: disposeBag)
