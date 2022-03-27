@@ -20,6 +20,11 @@ class RxCocoaTestViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    let idInputText: BehaviorSubject<String> = BehaviorSubject(value: "")
+    let idValid: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    let pwInputText: BehaviorSubject<String> = BehaviorSubject(value: "")
+    let pwValid: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,21 +36,42 @@ class RxCocoaTestViewController: UIViewController {
         
         // input: 아이디 입력, 비번 입력
         
-        let idInputObservable: Observable<String> = idField.rx.text.orEmpty.asObservable()
-        let idValidOvservable = idInputObservable.map(checkEmailValid)
+        //let idInputObservable: Observable<String> = idField.rx.text.orEmpty.asObservable()
         
-        let pwInputObservable: Observable<String> = pwField.rx.text.orEmpty.asObservable()
-        let pwValidObservable = pwInputObservable.map(checkPasswordValid)
+        idField.rx.text.orEmpty
+            .bind(to: self.idInputText)
+            .disposed(by: disposeBag)
+        
+        
+        
+//        let idValidOvservable = idInputObservable.map(checkEmailValid)
+//        idValidOvservable.bind(to: idValid)
+        self.idInputText.map(checkEmailValid(_:))
+            .bind(to: self.idValid)
+            .disposed(by: disposeBag)
+        
+        //let pwInputObservable: Observable<String> = pwField.rx.text.orEmpty.asObservable()
+        
+        pwField.rx.text.orEmpty
+            .bind(to: self.pwInputText)
+            .disposed(by: disposeBag)
+        
+        
+        //let pwValidObservable = pwInputObservable.map(checkPasswordValid)
+        
+        self.pwInputText.map(checkPasswordValid(_:))
+            .bind(to: self.pwValid)
+            .disposed(by: disposeBag)
     
         
         // output: 불릿, 로그인 버튼 enable,
     
-        idValidOvservable.subscribe(onNext: { check in self.idValidView.isHidden = check }).disposed(by: disposeBag)
-        pwValidObservable.subscribe(onNext: { check in self.pwValidView.isHidden = check }).disposed(by: disposeBag)
-        
-        
-        Observable.combineLatest(idValidOvservable, pwValidObservable, resultSelector: {$0 && $1})
-            .subscribe(onNext: { check in self.loginButton.isEnabled = check }).disposed(by: disposeBag)
+//        idValidOvservable.subscribe(onNext: { check in self.idValidView.isHidden = check }).disposed(by: disposeBag)
+//        pwValidObservable.subscribe(onNext: { check in self.pwValidView.isHidden = check }).disposed(by: disposeBag)
+//
+//
+//        Observable.combineLatest(idValidOvservable, pwValidObservable, resultSelector: {$0 && $1})
+//            .subscribe(onNext: { check in self.loginButton.isEnabled = check }).disposed(by: disposeBag)
         
         
         
@@ -69,7 +95,7 @@ class RxCocoaTestViewController: UIViewController {
 //            self.loginButton.isEnabled = check
 //        }).disposed(by: disposeBag)
 //
-//        
+//
         
         
     }
