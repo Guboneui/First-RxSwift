@@ -28,27 +28,48 @@ class RxCocoaTestViewController: UIViewController {
     
     
     private func bindUI() {
-        idField.rx.text.orEmpty
-            .map(checkEmailValid)
-            .subscribe(onNext: { check in
-                self.idValidView.isHidden = check
-            }).disposed(by: disposeBag)
         
-        pwField.rx.text.orEmpty
-            .map(checkPasswordValid)
-            .subscribe(onNext: { check in
-                self.pwValidView.isHidden = check
-            }).disposed(by: disposeBag)
+        // input: 아이디 입력, 비번 입력
         
-        Observable.combineLatest(
-            idField.rx.text.orEmpty.map(checkEmailValid),
-            pwField.rx.text.orEmpty.map(checkPasswordValid),
-            resultSelector: {s1, s2 in s1 && s2 }
-        ).subscribe(onNext: { check in
-            self.loginButton.isEnabled = check
-        }).disposed(by: disposeBag)
+        let idInputObservable: Observable<String> = idField.rx.text.orEmpty.asObservable()
+        let idValidOvservable = idInputObservable.map(checkEmailValid)
+        
+        let pwInputObservable: Observable<String> = pwField.rx.text.orEmpty.asObservable()
+        let pwValidObservable = pwInputObservable.map(checkPasswordValid)
+    
+        
+        // output: 불릿, 로그인 버튼 enable,
+    
+        idValidOvservable.subscribe(onNext: { check in self.idValidView.isHidden = check }).disposed(by: disposeBag)
+        pwValidObservable.subscribe(onNext: { check in self.pwValidView.isHidden = check }).disposed(by: disposeBag)
         
         
+        Observable.combineLatest(idValidOvservable, pwValidObservable, resultSelector: {$0 && $1})
+            .subscribe(onNext: { check in self.loginButton.isEnabled = check }).disposed(by: disposeBag)
+        
+        
+        
+//        idField.rx.text.orEmpty
+//            .map(checkEmailValid)
+//            .subscribe(onNext: { check in
+//                self.idValidView.isHidden = check
+//            }).disposed(by: disposeBag)
+//
+//        pwField.rx.text.orEmpty
+//            .map(checkPasswordValid)
+//            .subscribe(onNext: { check in
+//                self.pwValidView.isHidden = check
+//            }).disposed(by: disposeBag)
+//
+//        Observable.combineLatest(
+//            idField.rx.text.orEmpty.map(checkEmailValid),
+//            pwField.rx.text.orEmpty.map(checkPasswordValid),
+//            resultSelector: {s1, s2 in s1 && s2 }
+//        ).subscribe(onNext: { check in
+//            self.loginButton.isEnabled = check
+//        }).disposed(by: disposeBag)
+//
+//        
         
         
     }
