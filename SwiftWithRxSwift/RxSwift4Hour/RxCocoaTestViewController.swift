@@ -64,7 +64,7 @@ class RxCocoaTestViewController: UIViewController {
             .disposed(by: disposeBag)
     
         
-        // output: 불릿, 로그인 버튼 enable,
+        // MARK: -  output: 불릿, 로그인 버튼 enable,
         
         idValid.subscribe(onNext: { check in
             self.idValidView.isHidden = check

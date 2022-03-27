@@ -47,6 +47,7 @@
 		2CADC149278CB4E90035D95E /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADC148278CB4E90035D95E /* PhotosCollectionViewController.swift */; };
 		2CADC14B278CB51F0035D95E /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADC14A278CB51F0035D95E /* PhotosViewController.swift */; };
 		2CADC14D278CBAC50035D95E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADC14C278CBAC50035D95E /* PhotoCollectionViewCell.swift */; };
+		2CD2371627F0EC1D00BA438C /* Season2FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2371527F0EC1D00BA438C /* Season2FirstViewController.swift */; };
 		2CE1E1D6278DDF9F00AC0821 /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1E1D5278DDF9F00AC0821 /* FilterService.swift */; };
 		D2712429D87AF30BB8D16D47 /* Pods_SwiftWithRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614D770F73FFF1B7AAF0C6A /* Pods_SwiftWithRxSwift.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		2CADC148278CB4E90035D95E /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		2CADC14A278CB51F0035D95E /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		2CADC14C278CBAC50035D95E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CD2371527F0EC1D00BA438C /* Season2FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season2FirstViewController.swift; sourceTree = "<group>"; };
 		2CE1E1D5278DDF9F00AC0821 /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		8C4A1DAB97DF5C8CCC8873F7 /* Pods-SwiftWithRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWithRxSwift.release.xcconfig"; path = "Target Support Files/Pods-SwiftWithRxSwift/Pods-SwiftWithRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		F52FA974EB051588B64763EC /* Pods-SwiftWithRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWithRxSwift.debug.xcconfig"; path = "Target Support Files/Pods-SwiftWithRxSwift/Pods-SwiftWithRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				2C79D38C27DFDC1B0075C80D /* RxSwift4HourViewController.swift */,
 				2C205E5527E11D740049707A /* Common.swift */,
 				2C07635327ECDB3E009FF544 /* RxCocoaTestViewController.swift */,
+				2CD2371527F0EC1D00BA438C /* Season2FirstViewController.swift */,
 			);
 			path = RxSwift4Hour;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */,
 				2C84EDAE2790ABDB003A65C6 /* URLRequest+Extensions.swift in Sources */,
 				2C2EB05427933313008D5F29 /* URL+Extensions.swift in Sources */,
+				2CD2371627F0EC1D00BA438C /* Season2FirstViewController.swift in Sources */,
 				2C802C84277A2B3100E307F1 /* MainTableViewCell.swift in Sources */,
 				2C225D56278F3DFE002117B7 /* TaskListViewController.swift in Sources */,
 			);
