@@ -22,6 +22,7 @@
 		2C50C3532774BDCD00DC10CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C50C3512774BDCD00DC10CF /* Main.storyboard */; };
 		2C50C3552774BDCE00DC10CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C50C3542774BDCE00DC10CF /* Assets.xcassets */; };
 		2C50C3582774BDCE00DC10CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C50C3562774BDCE00DC10CF /* LaunchScreen.storyboard */; };
+		2C697AC427F211DF007C0EF0 /* BaseRxSwiftCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C697AC327F211DF007C0EF0 /* BaseRxSwiftCodeViewController.swift */; };
 		2C70CF6627CFBBDE0018BFD3 /* RxEampleStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C70CF6527CFBBDE0018BFD3 /* RxEampleStoryBoard.storyboard */; };
 		2C70CF7027CFC7F70018BFD3 /* Numbers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C70CF6F27CFC7F70018BFD3 /* Numbers.storyboard */; };
 		2C70CF7227CFC82D0018BFD3 /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70CF7127CFC82D0018BFD3 /* NumbersViewController.swift */; };
@@ -71,6 +72,7 @@
 		2C50C3542774BDCE00DC10CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C50C3572774BDCE00DC10CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C50C3592774BDCE00DC10CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C697AC327F211DF007C0EF0 /* BaseRxSwiftCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRxSwiftCodeViewController.swift; sourceTree = "<group>"; };
 		2C70CF6527CFBBDE0018BFD3 /* RxEampleStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxEampleStoryBoard.storyboard; sourceTree = "<group>"; };
 		2C70CF6F27CFC7F70018BFD3 /* Numbers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Numbers.storyboard; sourceTree = "<group>"; };
 		2C70CF7127CFC82D0018BFD3 /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				2C205E5527E11D740049707A /* Common.swift */,
 				2C07635327ECDB3E009FF544 /* RxCocoaTestViewController.swift */,
 				2CD2371527F0EC1D00BA438C /* Season2FirstViewController.swift */,
+				2C697AC327F211DF007C0EF0 /* BaseRxSwiftCodeViewController.swift */,
 			);
 			path = RxSwift4Hour;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				2CE1E1D6278DDF9F00AC0821 /* FilterService.swift in Sources */,
 				2C79D38D27DFDC1B0075C80D /* RxSwift4HourViewController.swift in Sources */,
 				2C802C81277A2AE700E307F1 /* TestTableViewController.swift in Sources */,
+				2C697AC427F211DF007C0EF0 /* BaseRxSwiftCodeViewController.swift in Sources */,
 				2C84EDAE2790ABDB003A65C6 /* URLRequest+Extensions.swift in Sources */,
 				2C2EB05427933313008D5F29 /* URL+Extensions.swift in Sources */,
 				2CD2371627F0EC1D00BA438C /* Season2FirstViewController.swift in Sources */,

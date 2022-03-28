@@ -35,6 +35,7 @@ class Season2FirstViewController: UIViewController {
         })
     }
     
+   
     func downloadJson(_ url: String, _ completion: @escaping (String?) -> Void) {
         DispatchQueue.global().async {
             let url = URL(string: url)!
