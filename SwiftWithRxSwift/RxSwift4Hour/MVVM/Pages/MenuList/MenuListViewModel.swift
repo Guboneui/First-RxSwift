@@ -12,7 +12,7 @@ class MenuListViewModel {
 
     lazy var menuObservable = BehaviorSubject<[Menu]>(value: [])
     
-    
+    var disposeBag = DisposeBag()
     //var itemsCount: Int = 5
     //var totalPrice: PublishSubject<Int> = PublishSubject()
     
@@ -34,6 +34,18 @@ class MenuListViewModel {
             Menu(name: "튀김3", price: 100, count: 0),
         ]
         menuObservable.onNext(menus)
+    }
+    
+    func clearAllItemSlections() {
+        menuObservable
+            .take(1)
+            .map{ menus in
+                menus.map{ m in
+                    Menu(name: m.name, price: m.price, count: 0)
+                }
+            }.subscribe(onNext: {
+                self.menuObservable.onNext($0)
+            })
     }
     
 }
