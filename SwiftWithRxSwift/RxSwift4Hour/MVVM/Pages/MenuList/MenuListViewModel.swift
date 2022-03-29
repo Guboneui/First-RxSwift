@@ -38,14 +38,14 @@ class MenuListViewModel {
     
     func clearAllItemSlections() {
         menuObservable
-            .take(1)
+            .observe(on: MainScheduler.instance)
             .map{ menus in
                 menus.map{ m in
                     Menu(name: m.name, price: m.price, count: 0)
                 }
             }.subscribe(onNext: {
                 self.menuObservable.onNext($0)
-            })
+            }).disposed(by: disposeBag)
     }
     
 }
