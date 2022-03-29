@@ -10,7 +10,7 @@ import RxSwift
 
 class MenuListViewModel {
 
-    lazy var menuObservable = PublishSubject<[Menu]>()
+    lazy var menuObservable = BehaviorSubject<[Menu]>(value: [])
     
     
     //var itemsCount: Int = 5
