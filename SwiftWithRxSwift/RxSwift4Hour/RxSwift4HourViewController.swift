@@ -19,6 +19,10 @@ import RxSwift
 // 단, UI를 처리하는 로직은 main에서 처리해 준다
 
 
+struct Beer: Decodable {
+    let name: String
+}
+
 class RxSwift4HourViewController: UIViewController {
 
     
