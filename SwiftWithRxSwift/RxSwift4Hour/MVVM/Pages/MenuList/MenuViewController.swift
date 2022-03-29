@@ -21,11 +21,16 @@ class MenuViewController: UIViewController {
         
         
         
+//        self.viewModel.itemCount
+//            .map{ "\($0)" }
+//            .subscribe(onNext: {
+//                self.itemCountLabel.text = $0
+//            }).disposed(by: disposeBag)
+        
         self.viewModel.itemCount
-            .map{ "\($0)" }
-            .subscribe(onNext: {
-                self.itemCountLabel.text = $0
-            }).disposed(by: disposeBag)
+            .map{"\($0)"}
+            .bind(to: self.itemCountLabel.rx.text)
+            .disposed(by: disposeBag)
         
         self.viewModel.totalPrice
             .map{ $0.currencyKR() }
