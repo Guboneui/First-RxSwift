@@ -703,9 +703,6 @@
                                             </tableViewCell>
                                         </prototypes>
                                         <sections/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="42O-k9-34a" id="TEr-S4-0AF"/>
-                                        </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yh-Xf-Uxd">
                                         <rect key="frame" x="0.0" y="647.5" width="414" height="122.5"/>

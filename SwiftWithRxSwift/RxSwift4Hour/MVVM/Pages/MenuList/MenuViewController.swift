@@ -12,7 +12,7 @@ import RxCocoa
 
 class MenuViewController: UIViewController {
     // MARK: - Life Cycle
-    
+    let cellID = "MenuItemTableViewCell"
     let viewModel: MenuListViewModel = MenuListViewModel()
     var disposeBag: DisposeBag = DisposeBag()
     
@@ -27,13 +27,24 @@ class MenuViewController: UIViewController {
 //                self.itemCountLabel.text = $0
 //            }).disposed(by: disposeBag)
         
+        viewModel.menuObservable
+            .bind(to: self.tableView.rx.items(cellIdentifier: self.cellID, cellType: MenuItemTableViewCell.self)) { index, item, cell in
+                cell.title.text = item.name
+                cell.price.text = "\(item.price)"
+                cell.count.text = "\(item.count)"
+
+            }.disposed(by: disposeBag)
+        
+        
         self.viewModel.itemCount
             .map{"\($0)"}
+            .observe(on: MainScheduler.instance)
             .bind(to: self.itemCountLabel.rx.text)
             .disposed(by: disposeBag)
         
         self.viewModel.totalPrice
             .map{ $0.currencyKR() }
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
                 self.totalPrice.text = $0
             }).disposed(by: disposeBag)
@@ -69,24 +80,6 @@ class MenuViewController: UIViewController {
         //performSegue(withIdentifier: "OrderViewController", sender: nil)
         
         //self.viewModel.totalPrice += 100
-        self.viewModel.totalPrice.onNext(100)
     }
     
-}
-
-extension MenuViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.menus.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemTableViewCell") as! MenuItemTableViewCell
-
-        let menu: Menu = self.viewModel.menus[indexPath.row]
-        cell.title.text = menu.name
-        cell.price.text = "\(menu.price)"
-        cell.count.text = "\(menu.count)"
-
-        return cell
-    }
 }
