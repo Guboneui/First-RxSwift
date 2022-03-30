@@ -7,12 +7,21 @@
 
 import Foundation
 import RxSwift
-
+import RxRelay
 
 // 모든 데이터에 대한 처리는 ViewModel에서 처리한다.
+
 class MenuListViewModel {
 
-    lazy var menuObservable = BehaviorSubject<[Menu]>(value: [])
+    // UI와 연결된 서브젝트는 에러가 난다고 해서 스트림이 끊어지면 안됨 -> UI에서도 끊어지기 때문에
+    // 따라서 Subject도 끊어지면 안됨
+    // cocoa에서는 drive
+    // subject 에서는 relay
+    //var menuObservable = BehaviorSubject<[Menu]>(value: [])
+    // subject에서는 next, error, completed 를 뱉어내지만
+    // relay에서는 내보내기만 하기 때문에 onNext가 아닌 accept를 사용한다.
+    
+    var menuObservable = BehaviorRelay<[Menu]>(value: [])
     
     var disposeBag = DisposeBag()
     //var itemsCount: Int = 5
@@ -65,7 +74,8 @@ class MenuListViewModel {
                 }
             }.take(1)
             .subscribe(onNext: {
-                self.menuObservable.onNext($0)
+                //self.menuObservable.onNext($0)
+                self.menuObservable.accept($0)
             }).disposed(by: disposeBag)
     }
     
@@ -84,7 +94,8 @@ class MenuListViewModel {
             }
             .take(1)
             .subscribe(onNext: {
-                self.menuObservable.onNext($0)
+                //self.menuObservable.onNext($0)
+                self.menuObservable.accept($0)
             }).disposed(by: disposeBag)
     }
     
