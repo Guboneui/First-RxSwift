@@ -30,12 +30,30 @@ class MenuListViewModel {
     // 서브젝트는 옵저버블 처럼 구독해서 값을 받을수도 있지만, 외부에서 값을 통제할 수 도 있다.
 
     init() {
-        var menus: [Menu] = [
-            Menu(id: 0, name: "튀김1", price: 100, count: 0),
-            Menu(id: 1, name: "튀김2", price: 100, count: 0),
-            Menu(id: 2, name: "튀김3", price: 100, count: 0),
-        ]
-        menuObservable.onNext(menus)
+//        var menus: [Menu] = [
+//            Menu(id: 0, name: "튀김1", price: 100, count: 0),
+//            Menu(id: 1, name: "튀김2", price: 100, count: 0),
+//            Menu(id: 2, name: "튀김3", price: 100, count: 0),
+//        ]
+        
+        _ = APIService.fetchAllMenusRx()
+            .map { data -> [MenuItem] in
+                struct Response: Decodable {
+                    let menus: [MenuItem]
+                }
+                let response = try! JSONDecoder().decode(Response.self, from: data)
+                return response.menus
+            }.map{ menuItems -> [Menu] in
+                var menus: [Menu] = []
+                menuItems.enumerated().forEach { (index, item) in
+                    let menu = Menu.fromMenuItems(id: index, item: item)
+                    menus.append(menu)
+                }
+                return menus
+            }
+            .take(1)
+            .bind(to: self.menuObservable)
+        
     }
     
     func clearAllItemSlections() {
