@@ -19,8 +19,6 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
 //        self.viewModel.itemCount
 //            .map{ "\($0)" }
 //            .subscribe(onNext: {
@@ -33,6 +31,11 @@ class MenuViewController: UIViewController {
                 cell.price.text = "\(item.price)"
                 cell.count.text = "\(item.count)"
 
+                // TableViewCell에 대한 액션 또한 해당 스트림에서 동작한다.
+                cell.onChange = { [weak self] increase in
+                    self?.viewModel.changeCount(item: item, increase: increase)
+                }
+                
             }.disposed(by: disposeBag)
         
         
@@ -80,9 +83,7 @@ class MenuViewController: UIViewController {
         // showAlert("Order Fail", "No Orders")
         //performSegue(withIdentifier: "OrderViewController", sender: nil)
         
-        self.viewModel.menuObservable.onNext([
-            Menu(name: "changed", price: 100, count: 2)
-        ])
+        self.viewModel.onOrder()
     }
     
 }
