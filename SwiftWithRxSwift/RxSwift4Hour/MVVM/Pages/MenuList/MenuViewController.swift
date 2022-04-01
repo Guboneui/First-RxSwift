@@ -11,65 +11,65 @@ import RxSwift
 import RxCocoa
 
 class MenuViewController: UIViewController {
-    // MARK: - Life Cycle
-    let cellID = "MenuItemTableViewCell"
-    let viewModel: MenuListViewModel = MenuListViewModel()
-    var disposeBag: DisposeBag = DisposeBag()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+//    // MARK: - Life Cycle
+//    let cellID = "MenuItemTableViewCell"
+//    let viewModel: MenuListViewModel = MenuListViewModel()
+//    var disposeBag: DisposeBag = DisposeBag()
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+////        self.viewModel.itemCount
+////            .map{ "\($0)" }
+////            .subscribe(onNext: {
+////                self.itemCountLabel.text = $0
+////            }).disposed(by: disposeBag)
+//
+//        viewModel.menuObservable
+//            .bind(to: self.tableView.rx.items(cellIdentifier: self.cellID, cellType: MenuItemTableViewCell.self)) { index, item, cell in
+//                cell.title.text = item.name
+//                cell.price.text = "\(item.price)"
+//                cell.count.text = "\(item.count)"
+//
+//                // TableViewCell에 대한 액션 또한 해당 스트림에서 동작한다.
+//                cell.onChange = { [weak self] increase in
+//                    self?.viewModel.changeCount(item: item, increase: increase)
+//                }
+//
+//            }.disposed(by: disposeBag)
+//
+//
 //        self.viewModel.itemCount
-//            .map{ "\($0)" }
+//            .map{"\($0)"}
+//            .asDriver(onErrorJustReturn: "")
+//            .drive(itemCountLabel.rx.text)
+//            //.observe(on: MainScheduler.instance)
+//            //.bind(to: self.itemCountLabel.rx.text)
+//            .disposed(by: disposeBag)
+//
+//        self.viewModel.totalPrice
+//            .map{ $0.currencyKR() }
+//            .observe(on: MainScheduler.instance)
 //            .subscribe(onNext: {
-//                self.itemCountLabel.text = $0
+//                self.totalPrice.text = $0
 //            }).disposed(by: disposeBag)
-        
-        viewModel.menuObservable
-            .bind(to: self.tableView.rx.items(cellIdentifier: self.cellID, cellType: MenuItemTableViewCell.self)) { index, item, cell in
-                cell.title.text = item.name
-                cell.price.text = "\(item.price)"
-                cell.count.text = "\(item.count)"
-
-                // TableViewCell에 대한 액션 또한 해당 스트림에서 동작한다.
-                cell.onChange = { [weak self] increase in
-                    self?.viewModel.changeCount(item: item, increase: increase)
-                }
-                
-            }.disposed(by: disposeBag)
-        
-        
-        self.viewModel.itemCount
-            .map{"\($0)"}
-            .asDriver(onErrorJustReturn: "")
-            .drive(itemCountLabel.rx.text)
-            //.observe(on: MainScheduler.instance)
-            //.bind(to: self.itemCountLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        self.viewModel.totalPrice
-            .map{ $0.currencyKR() }
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: {
-                self.totalPrice.text = $0
-            }).disposed(by: disposeBag)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let identifier = segue.identifier ?? ""
-        if identifier == "OrderViewController",
-            let orderVC = segue.destination as? OrderViewController {
-            // TODO: pass selected menus
-        }
-    }
-
-    func showAlert(_ title: String, _ message: String) {
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alertVC, animated: true, completion: nil)
-    }
-
-    // MARK: - InterfaceBuilder Links
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let identifier = segue.identifier ?? ""
+//        if identifier == "OrderViewController",
+//            let orderVC = segue.destination as? OrderViewController {
+//            // TODO: pass selected menus
+//        }
+//    }
+//
+//    func showAlert(_ title: String, _ message: String) {
+//        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+//        present(alertVC, animated: true, completion: nil)
+//    }
+//
+//    // MARK: - InterfaceBuilder Links
 
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!

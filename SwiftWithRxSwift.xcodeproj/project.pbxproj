@@ -205,6 +205,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2C3D6FE327F7580E006D8007 /* DefaultFolder */ = {
+			isa = PBXGroup;
+			children = (
+				2C79D38C27DFDC1B0075C80D /* RxSwift4HourViewController.swift */,
+				2C205E5527E11D740049707A /* Common.swift */,
+				2C07635327ECDB3E009FF544 /* RxCocoaTestViewController.swift */,
+				2CD2371527F0EC1D00BA438C /* Season2FirstViewController.swift */,
+				2C697AC327F211DF007C0EF0 /* BaseRxSwiftCodeViewController.swift */,
+				2C697AC527F21B01007C0EF0 /* Step2MainViewController.swift */,
+				2C697AC727F21B09007C0EF0 /* Step2DetailViewController.swift */,
+				2C697AC927F21C85007C0EF0 /* Step2MainTableViewCell.swift */,
+				2C697ACA27F21C85007C0EF0 /* Step2MainTableViewCell.xib */,
+			);
+			path = DefaultFolder;
+			sourceTree = "<group>";
+		};
 		2C466FC127F38C250056F856 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,11 +301,6 @@
 				2C70CF6127CFBB710018BFD3 /* RxSwiftExample */,
 				2C50C34B2774BDCD00DC10CF /* AppDelegate.swift */,
 				2C50C34D2774BDCD00DC10CF /* SceneDelegate.swift */,
-				2C50C34F2774BDCD00DC10CF /* ViewController.swift */,
-				2C802C80277A2AE700E307F1 /* TestTableViewController.swift */,
-				2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */,
-				2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */,
-				2C50C3512774BDCD00DC10CF /* Main.storyboard */,
 				2CADC143278C9F710035D95E /* RxUdemy */,
 				2C50C3542774BDCE00DC10CF /* Assets.xcassets */,
 				2C50C3562774BDCE00DC10CF /* LaunchScreen.storyboard */,
@@ -301,6 +312,11 @@
 		2C70CF6127CFBB710018BFD3 /* RxSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
+				2C50C34F2774BDCD00DC10CF /* ViewController.swift */,
+				2C802C80277A2AE700E307F1 /* TestTableViewController.swift */,
+				2C802C82277A2B3100E307F1 /* MainTableViewCell.swift */,
+				2C802C83277A2B3100E307F1 /* MainTableViewCell.xib */,
+				2C50C3512774BDCD00DC10CF /* Main.storyboard */,
 				2C70CF6227CFBB970018BFD3 /* Example */,
 			);
 			path = RxSwiftExample;
@@ -337,16 +353,8 @@
 		2C79D38927DFBCE50075C80D /* RxSwift4Hour */ = {
 			isa = PBXGroup;
 			children = (
+				2C3D6FE327F7580E006D8007 /* DefaultFolder */,
 				2C79D38A27DFBCF60075C80D /* RxSwift4Hour.storyboard */,
-				2C79D38C27DFDC1B0075C80D /* RxSwift4HourViewController.swift */,
-				2C205E5527E11D740049707A /* Common.swift */,
-				2C07635327ECDB3E009FF544 /* RxCocoaTestViewController.swift */,
-				2CD2371527F0EC1D00BA438C /* Season2FirstViewController.swift */,
-				2C697AC327F211DF007C0EF0 /* BaseRxSwiftCodeViewController.swift */,
-				2C697AC527F21B01007C0EF0 /* Step2MainViewController.swift */,
-				2C697AC727F21B09007C0EF0 /* Step2DetailViewController.swift */,
-				2C697AC927F21C85007C0EF0 /* Step2MainTableViewCell.swift */,
-				2C697ACA27F21C85007C0EF0 /* Step2MainTableViewCell.xib */,
 				2C466FC127F38C250056F856 /* MVVM */,
 			);
 			path = RxSwift4Hour;
