@@ -13,16 +13,15 @@ let MenuUrl = "https://firebasestorage.googleapis.com/v0/b/rxswiftin4hours.appsp
 
 class APIService {
     static func fetchAllMenus(onComplete: @escaping (Result<Data, Error>) -> Void) {
-        URLSession.shared.dataTask(with: URL(string: MenuUrl)!) { data, res, err in
-            if let err = err {
-                onComplete(.failure(err))
+        URLSession.shared.dataTask(with: URL(string: MenuUrl)!) { data, res, error in
+            if let error = error {
+                onComplete(.failure(error))
                 return
             }
             guard let data = data else {
+                // 받아온 데이터가 nil 값이기 때문에 guard문 안에 onComplete를 통해서 error를 내보냄
                 let httpResponse = res as! HTTPURLResponse
-                onComplete(.failure(NSError(domain: "no data",
-                                            code: httpResponse.statusCode,
-                                            userInfo: nil)))
+                onComplete(.failure(NSError(domain: "no data", code: httpResponse.statusCode, userInfo: nil)))
                 return
             }
             onComplete(.success(data))
@@ -30,17 +29,57 @@ class APIService {
     }
     
     static func fetchAllMenusRx() -> Observable<Data> {
-        return Observable.create() { emitter in
+        return Observable.create { emitter in
             fetchAllMenus { result in
                 switch result {
-                case .success(let data):
+                case let .success(data):
                     emitter.onNext(data)
                     emitter.onCompleted()
-                case .failure(let error):
+                case let .failure(error):
                     emitter.onError(error)
                 }
             }
-            return Disposables.create() 
+            return Disposables.create()
         }
     }
 }
+
+
+
+
+
+
+
+//class APIService {
+//    static func fetchAllMenus(onComplete: @escaping (Result<Data, Error>) -> Void) {
+//        URLSession.shared.dataTask(with: URL(string: MenuUrl)!) { data, res, err in
+//            if let err = err {
+//                onComplete(.failure(err))
+//                return
+//            }
+//            guard let data = data else {
+//                let httpResponse = res as! HTTPURLResponse
+//                onComplete(.failure(NSError(domain: "no data",
+//                                            code: httpResponse.statusCode,
+//                                            userInfo: nil)))
+//                return
+//            }
+//            onComplete(.success(data))
+//        }.resume()
+//    }
+//
+//    static func fetchAllMenusRx() -> Observable<Data> {
+//        return Observable.create() { emitter in
+//            fetchAllMenus { result in
+//                switch result {
+//                case .success(let data):
+//                    emitter.onNext(data)
+//                    emitter.onCompleted()
+//                case .failure(let error):
+//                    emitter.onError(error)
+//                }
+//            }
+//            return Disposables.create()
+//        }
+//    }
+//}
