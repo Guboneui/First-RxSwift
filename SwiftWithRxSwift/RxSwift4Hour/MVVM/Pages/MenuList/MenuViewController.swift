@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxViewController
 
 class MenuViewController: UIViewController {
 //    // MARK: - Life Cycle
@@ -75,17 +76,89 @@ class MenuViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var itemCountLabel: UILabel!
     @IBOutlet var totalPrice: UILabel!
-
-    @IBAction func onClear() {
-        self.viewModel.clearAllItemSlections()
-    }
-
-    @IBAction func onOrder(_ sender: UIButton) {
-        // TODO: no selection
-        // showAlert("Order Fail", "No Orders")
-        //performSegue(withIdentifier: "OrderViewController", sender: nil)
-        
-        self.viewModel.onOrder()
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var orderButton: UIButton!
+    
+    let viewModel: MenuViewModelType
+    var disposeBag = DisposeBag()
+    
+    init(viewModel: MenuViewModelType = MenuListViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        viewModel = MenuListViewModel()
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.refreshControl = UIRefreshControl()
+        setupBinding()
+    }
+    
+
+    func setupBinding() {
+        // 당겨서 새로고침 부분 -> UIRefreshControl()
+        
+        let firstLoad = rx.viewWillAppear
+            .take(1)
+            .map{ _ in () }
+        let reload = tableView.refreshControl?.rx.controlEvent(.valueChanged)
+            .map{ _ in () } ?? Observable.just(())
+        
+        Observable.merge([firstLoad, reload])
+            .bind(to: viewModel.fetchMenus)
+            .disposed(by: disposeBag)
+        
+        
+        // 처음 보일때 및 clear 버튼을 눌렀을 때
+        let viewDidAppear = rx.viewWillAppear.map { _ in () }
+        let whenClearTap = self.clearButton.rx.tap.map { _ in () }
+        
+        clearButton.rx.tap.asObservable().bind(onNext: {
+            print("aaa")
+        }).disposed(by: disposeBag)
+        
+        Observable.merge([viewDidAppear, whenClearTap])
+            .bind(to: viewModel.clearSelections)
+            .disposed(by: disposeBag)
+        
+        
+        viewModel.activated
+            .map { !$0 }
+            .observe(on: MainScheduler.instance)
+            .do(onNext: { [weak self] finished in
+                if finished {
+                    self?.tableView.refreshControl?.endRefreshing()
+                }
+            })
+            .bind(to: activityIndicator.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel.allMenus
+            .bind(to: tableView.rx.items(cellIdentifier: "MenuItemTableViewCell", cellType: MenuItemTableViewCell.self)) { _, item, cell in
+                
+                cell.onData.onNext(item)
+                cell.onChanged
+                    .map{
+                        (item, $0)
+                        
+                    }
+            
+                    .bind(to: self.viewModel.increaseMenuCount)
+                    .disposed(by: cell.disposeBag)
+            }.disposed(by: disposeBag)
+        
+        viewModel.totalSelectedCountText
+            .bind(to: itemCountLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.totalPriceText
+            .bind(to: totalPrice.rx.text)
+            .disposed(by: disposeBag)
+
+        
+    }
 }

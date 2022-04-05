@@ -551,7 +551,7 @@
         <!--Menu View Controller-->
         <scene sceneID="pFr-VK-XcB">
             <objects>
-                <viewController id="42O-k9-34a" customClass="MenuViewController" customModule="RxSwift_MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="42O-k9-34a" customClass="MenuViewController" customModule="SwiftWithRxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4BI-TO-ljQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -587,7 +587,7 @@
                                         <rect key="frame" x="0.0" y="60" width="414" height="587.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuItemTableViewCell" id="xTj-Ve-oWF" customClass="MenuItemTableViewCell" customModule="RxSwift_MVVM" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuItemTableViewCell" id="xTj-Ve-oWF" customClass="MenuItemTableViewCell" customModule="SwiftWithRxSwift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.5" width="414" height="44.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xTj-Ve-oWF" id="L67-tJ-idC">
@@ -722,9 +722,6 @@
                                                 <state key="normal" title="Clear">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="onClear" destination="42O-k9-34a" eventType="touchUpInside" id="Hmn-GZ-rjU"/>
-                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JGR-eM-WcJ">
                                                 <rect key="frame" x="333.5" y="10" width="60.5" height="20.5"/>
@@ -776,9 +773,6 @@
                                         <state key="normal" title="ORDER">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="onOrder:" destination="42O-k9-34a" eventType="touchUpInside" id="upj-P3-DAa"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -805,7 +799,9 @@
                     <navigationItem key="navigationItem" id="akd-F5-GPn"/>
                     <connections>
                         <outlet property="activityIndicator" destination="ofG-2Q-tI6" id="3e8-JR-oRi"/>
+                        <outlet property="clearButton" destination="CD4-Se-DQm" id="dNE-L5-ult"/>
                         <outlet property="itemCountLabel" destination="Bgz-At-3fq" id="dXT-NY-pcg"/>
+                        <outlet property="orderButton" destination="GUw-Xc-BhV" id="ye2-tG-XRj"/>
                         <outlet property="tableView" destination="oDj-q9-XVT" id="f50-jK-fLG"/>
                         <outlet property="totalPrice" destination="pxX-3D-EbW" id="ySX-ip-9cE"/>
                         <segue destination="V9w-ub-mpB" kind="show" identifier="OrderViewController" id="gVe-iY-SfK"/>
@@ -818,7 +814,7 @@
         <!--Receipt-->
         <scene sceneID="Qeb-TT-7WF">
             <objects>
-                <viewController title="Receipt" id="V9w-ub-mpB" customClass="OrderViewController" customModule="RxSwift_MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Receipt" id="V9w-ub-mpB" customClass="OrderViewController" customModule="SwiftWithRxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qqg-c5-TOG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
